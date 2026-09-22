@@ -1,0 +1,6 @@
+{
+  "name": "Drem Shop",
+  "description": "Premium Digital E-Book Marketplace & E-Commerce Platform featuring instant secure downloads, video reviews, coupon offers, and comprehensive multi-role admin management.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}
