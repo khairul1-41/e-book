@@ -31,7 +31,7 @@ export const SocialBarAd: React.FC = () => {
   return (
     <div
       id="adsterra-social-bar"
-      className="fixed bottom-4 left-4 z-40 max-w-sm bg-white border border-blue-200 shadow-2xl rounded-2xl p-3.5 flex items-center gap-3 animate-in slide-in-from-bottom-5 duration-300 transition-all hover:border-blue-400"
+      className="fixed bottom-18 sm:bottom-4 left-3 sm:left-4 right-3 sm:right-auto z-30 max-w-full sm:max-w-sm bg-white border border-blue-200 shadow-2xl rounded-2xl p-3 sm:p-3.5 flex items-center gap-3 animate-in slide-in-from-bottom-5 duration-300 transition-all hover:border-blue-400"
     >
       <div className="relative shrink-0">
         {hotBook?.coverImage ? (

@@ -21,6 +21,7 @@ import { TrustBenefitsSection } from '../components/user/TrustBenefitsSection';
 import { NewsletterSection } from '../components/user/NewsletterSection';
 import { LegalModal } from '../components/user/LegalModal';
 import { ContactModal } from '../components/user/ContactModal';
+import { MobileBottomNav } from '../components/common/MobileBottomNav';
 import {
   BookOpen,
   Filter,
@@ -96,7 +97,7 @@ export const UserWebsite: React.FC = () => {
   }, [products, selectedCategory, searchQuery, sortBy]);
 
   return (
-    <div className="min-h-screen bg-white text-slate-900 flex flex-col font-sans selection:bg-blue-100 selection:text-blue-900">
+    <div className="min-h-screen bg-white text-slate-900 flex flex-col font-sans selection:bg-blue-100 selection:text-blue-900 overflow-x-hidden pb-16 md:pb-0">
       
       {/* Top Announcement Bar */}
       <AnnouncementBar />
@@ -294,6 +295,9 @@ export const UserWebsite: React.FC = () => {
       <LegalModal />
       <ContactModal />
       <SocialBarAd />
+
+      {/* Mobile Sticky Thumb Navigation Bar */}
+      <MobileBottomNav onNavigateSection={handleNavigateSection} />
 
     </div>
   );

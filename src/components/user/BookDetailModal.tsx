@@ -89,20 +89,20 @@ export const BookDetailModal: React.FC = () => {
   };
 
   return (
-    <div className="fixed inset-0 z-50 flex items-center justify-center p-3 sm:p-6 bg-slate-950/70 backdrop-blur-xs overflow-y-auto animate-in fade-in duration-200">
-      <div className="bg-white rounded-3xl shadow-2xl max-w-4xl w-full my-8 border border-slate-200 overflow-hidden flex flex-col relative max-h-[92vh]">
+    <div className="fixed inset-0 z-50 flex items-center justify-center p-2.5 sm:p-6 bg-slate-950/75 backdrop-blur-xs overflow-y-auto animate-in fade-in duration-200">
+      <div className="bg-white rounded-3xl shadow-2xl max-w-4xl w-full my-auto sm:my-8 border border-slate-200 overflow-hidden flex flex-col relative max-h-[94vh]">
         
         {/* Close Button */}
         <button
           onClick={() => setSelectedProduct(null)}
-          className="absolute top-4 right-4 z-20 p-2 rounded-full bg-slate-100 hover:bg-slate-200 text-slate-600 transition-colors"
+          className="absolute top-3 right-3 sm:top-4 sm:right-4 z-30 p-2 rounded-full bg-slate-100 hover:bg-slate-200 text-slate-700 transition-colors shadow-sm min-w-[38px] min-h-[38px] flex items-center justify-center cursor-pointer"
           aria-label="Close"
         >
           <X className="w-5 h-5" />
         </button>
 
         {/* Scrollable Container */}
-        <div className="overflow-y-auto p-6 sm:p-8">
+        <div className="overflow-y-auto p-4 sm:p-8">
           
           <div className="grid grid-cols-1 md:grid-cols-12 gap-8 items-start">
             

@@ -80,35 +80,36 @@ export const UserAccountModal: React.FC = () => {
   const wishlistBooks = products.filter(p => wishlist.includes(p.id));
 
   return (
-    <div className="fixed inset-0 z-50 flex items-center justify-center p-3 sm:p-6 bg-slate-950/75 backdrop-blur-xs overflow-y-auto animate-in fade-in duration-200">
-      <div className="bg-white rounded-3xl shadow-2xl max-w-2xl w-full my-8 border border-slate-200 overflow-hidden flex flex-col relative max-h-[92vh]">
+    <div className="fixed inset-0 z-50 flex items-center justify-center p-2.5 sm:p-6 bg-slate-950/75 backdrop-blur-xs overflow-y-auto animate-in fade-in duration-200">
+      <div className="bg-white rounded-3xl shadow-2xl max-w-2xl w-full my-auto sm:my-8 border border-slate-200 overflow-hidden flex flex-col relative max-h-[94vh]">
         
         {/* Header */}
-        <div className="px-6 py-4 border-b border-slate-200 flex items-center justify-between bg-slate-50">
+        <div className="px-4 sm:px-6 py-3.5 sm:py-4 border-b border-slate-200 flex items-center justify-between bg-slate-50">
           <div className="flex items-center gap-2.5">
-            <div className="w-8 h-8 rounded-lg bg-blue-900 text-white flex items-center justify-center">
+            <div className="w-8 h-8 rounded-lg bg-blue-900 text-white flex items-center justify-center shrink-0">
               <User className="w-4 h-4 text-amber-400" />
             </div>
             <div>
-              <h3 className="font-bold text-base text-slate-900">
+              <h3 className="font-extrabold text-sm sm:text-base text-slate-900">
                 {isAuthenticated ? `স্বাগতম, ${currentUser?.displayName}` : 'কাস্টমার অ্যাকাউন্ট'}
               </h3>
-              <p className="text-[11px] text-slate-500">
-                {isAuthenticated ? 'আপনার কেনা ই-বুক এবং অর্ডার ট্র্যাক করুন' : 'লগইন বা নতুন অ্যাকাউন্ট তৈরি করুন'}
+              <p className="text-[10px] sm:text-[11px] text-slate-500">
+                {isAuthenticated ? 'আপনার কেনা ই-বুক এবং প্রোফাইল' : 'লগইন বা নতুন অ্যাকাউন্ট তৈরি করুন'}
               </p>
             </div>
           </div>
 
           <button
             onClick={() => setIsAccountOpen(false)}
-            className="p-1.5 text-slate-400 hover:text-slate-600 rounded-lg hover:bg-slate-200 transition-colors"
+            className="p-2 text-slate-400 hover:text-slate-600 rounded-xl hover:bg-slate-200 transition-colors min-w-[38px] min-h-[38px] flex items-center justify-center cursor-pointer"
+            aria-label="Close"
           >
             <X className="w-5 h-5" />
           </button>
         </div>
 
         {/* Body */}
-        <div className="overflow-y-auto p-6 flex-1">
+        <div className="overflow-y-auto p-4 sm:p-6 flex-1">
           
           {!isAuthenticated ? (
             /* Authentication Screens */
@@ -307,18 +308,9 @@ export const UserAccountModal: React.FC = () => {
                 </div>
 
                 <div className="flex items-center gap-2">
-                  {(currentUser?.role === 'super_admin' || currentUser?.role === 'manager' || currentUser?.role === 'editor') && (
-                    <a
-                      href="#/admin"
-                      onClick={() => setIsAccountOpen(false)}
-                      className="text-xs text-blue-900 hover:text-blue-800 font-bold flex items-center gap-1 bg-amber-100 hover:bg-amber-200 px-2.5 py-1 rounded-lg transition-colors"
-                    >
-                      <span>এডমিন প্যানেল</span>
-                    </a>
-                  )}
                   <button
                     onClick={logout}
-                    className="text-xs text-rose-600 hover:text-rose-700 font-semibold flex items-center gap-1 cursor-pointer"
+                    className="text-xs text-rose-600 hover:text-rose-700 font-semibold flex items-center gap-1 cursor-pointer py-1 px-2 rounded-lg hover:bg-rose-50 transition-colors"
                   >
                     <LogOut className="w-3.5 h-3.5" />
                     <span>লগআউট</span>

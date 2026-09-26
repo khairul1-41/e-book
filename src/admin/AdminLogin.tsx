@@ -170,10 +170,14 @@ export const AdminLogin: React.FC<AdminLoginProps> = ({ onSuccess }) => {
           <div className="mt-6 text-center">
             <a
               href="#/"
-              className="text-xs text-slate-400 hover:text-white inline-flex items-center gap-1 transition-colors"
+              onClick={(e) => {
+                e.preventDefault();
+                window.location.hash = '#/';
+              }}
+              className="text-xs text-slate-400 hover:text-white inline-flex items-center gap-1.5 transition-colors cursor-pointer"
             >
-              <span>কাস্টমার ওয়েবসাইটে ফিরে যান</span>
               <ExternalLink className="w-3.5 h-3.5" />
+              <span>User Page Preview (ওয়েবসাইটে ফিরে যান)</span>
             </a>
           </div>
 

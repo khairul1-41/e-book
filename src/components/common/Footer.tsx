@@ -6,7 +6,6 @@ import {
   Phone,
   Facebook,
   Youtube,
-  ShieldCheck,
   Lock,
   ArrowUpRight
 } from 'lucide-react';
@@ -171,49 +170,33 @@ export const Footer: React.FC<FooterProps> = ({ onNavigateSection }) => {
             </ul>
           </div>
 
-          {/* Col 4: Admin Page Preview & Payment Info */}
+          {/* Col 4: Secure Payment & Instant Delivery */}
           <div className="space-y-3">
             <h4 className="text-xs font-bold tracking-wider text-white uppercase mb-2">
-              এডমিন ও নিরাপত্তা
+              পেমেন্ট ও নিরাপত্তা
             </h4>
 
-            {/* Dedicated Admin Page Preview Link */}
-            <div>
-              <a
-                id="link-footer-admin-preview"
-                href="#/admin"
-                className="inline-flex items-center justify-between w-full px-3 py-2 bg-slate-900 hover:bg-blue-950 text-amber-300 hover:text-amber-200 border border-slate-800 hover:border-blue-700/60 rounded-xl text-xs font-bold transition-all shadow-xs group"
-                title="এডমিন কন্ট্রোল প্যানেল প্রিভিউ করুন"
-              >
-                <div className="flex items-center gap-2">
-                  <ShieldCheck className="w-4 h-4 text-amber-400 group-hover:scale-110 transition-transform" />
-                  <span>এডমিন প্যানেল প্রিভিউ</span>
-                </div>
-                <ArrowUpRight className="w-3.5 h-3.5 text-slate-400 group-hover:text-amber-300 transition-colors" />
-              </a>
-              <span className="text-[10px] text-slate-500 block mt-1">
-                পণ্য, অর্ডার ও বিজ্ঞাপন নিয়ন্ত্রণ প্যানেল (/#/admin)
-              </span>
-            </div>
-
             {/* Secure Payment Badges */}
-            <div className="pt-1">
-              <div className="flex items-center gap-1.5 text-[11px] font-semibold text-emerald-400 mb-1.5">
-                <Lock className="w-3 h-3" />
-                <span>নিরাপদ পেমেন্ট চ্যানেল</span>
+            <div className="space-y-2">
+              <div className="flex items-center gap-1.5 text-[11px] font-semibold text-emerald-400">
+                <Lock className="w-3.5 h-3.5" />
+                <span>১০০% নিরাপদ পেমেন্ট চ্যানেল</span>
               </div>
-              <div className="flex flex-wrap items-center gap-1.5">
-                <span className="px-1.5 py-0.5 bg-rose-950 text-rose-300 font-bold rounded border border-rose-900 text-[9px]">
+              <p className="text-[11px] text-slate-400 leading-relaxed">
+                বিকাশ, নগদ, রকেট এবং কার্ডের মাধ্যমে পেমেন্ট করে তাৎক্ষণিক ই-বুক ফাইল ডাউনলোড করুন।
+              </p>
+              <div className="flex flex-wrap items-center gap-1.5 pt-1">
+                <span className="px-2 py-0.5 bg-rose-950 text-rose-300 font-bold rounded border border-rose-900 text-[10px]">
                   bKash
                 </span>
-                <span className="px-1.5 py-0.5 bg-orange-950 text-orange-300 font-bold rounded border border-orange-900 text-[9px]">
+                <span className="px-2 py-0.5 bg-orange-950 text-orange-300 font-bold rounded border border-orange-900 text-[10px]">
                   Nagad
                 </span>
-                <span className="px-1.5 py-0.5 bg-purple-950 text-purple-300 font-bold rounded border border-purple-900 text-[9px]">
+                <span className="px-2 py-0.5 bg-purple-950 text-purple-300 font-bold rounded border border-purple-900 text-[10px]">
                   Rocket
                 </span>
-                <span className="px-1.5 py-0.5 bg-blue-950 text-blue-300 font-bold rounded border border-blue-900 text-[9px]">
-                  Cards
+                <span className="px-2 py-0.5 bg-blue-950 text-blue-300 font-bold rounded border border-blue-900 text-[10px]">
+                  Visa / Card
                 </span>
               </div>
             </div>
@@ -232,15 +215,8 @@ export const Footer: React.FC<FooterProps> = ({ onNavigateSection }) => {
               onClick={() => setLegalModalType('copyright')}
               className="hover:text-slate-300 transition-colors cursor-pointer"
             >
-              কপিরাইট ও DMCA
+              কপিরাইট ও DMCA পলিসি
             </button>
-            <span>•</span>
-            <a
-              href="#/admin"
-              className="text-slate-400 hover:text-amber-400 transition-colors flex items-center gap-1"
-            >
-              <span>Admin Access</span>
-            </a>
           </div>
         </div>
 

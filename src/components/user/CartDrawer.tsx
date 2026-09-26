@@ -59,22 +59,22 @@ export const CartDrawer: React.FC = () => {
         className="absolute inset-0 bg-slate-950/60 backdrop-blur-xs transition-opacity"
       />
 
-      <div className="fixed inset-y-0 right-0 max-w-full flex pl-10">
-        <div className="w-screen max-w-md bg-white shadow-2xl flex flex-col border-l border-slate-200">
+      <div className="fixed inset-y-0 right-0 max-w-full flex pl-0 sm:pl-10">
+        <div className="w-screen max-w-md bg-white shadow-2xl flex flex-col border-l border-slate-200 h-full">
           
           {/* Header */}
-          <div className="p-4 sm:p-5 border-b border-slate-200 flex items-center justify-between bg-slate-50">
-            <div className="flex items-center gap-2.5">
-              <div className="w-8 h-8 rounded-lg bg-blue-900 text-white flex items-center justify-center">
+          <div className="p-3.5 sm:p-5 border-b border-slate-200 flex items-center justify-between bg-slate-50">
+            <div className="flex items-center gap-2 sm:gap-2.5">
+              <div className="w-8 h-8 rounded-lg bg-blue-900 text-white flex items-center justify-center shrink-0">
                 <ShoppingCart className="w-4 h-4 text-amber-400" />
               </div>
-              <h3 className="font-bold text-base text-slate-900">
+              <h3 className="font-extrabold text-sm sm:text-base text-slate-900">
                 আপনার শপিং কার্ট ({cart.length})
               </h3>
             </div>
             <button
               onClick={() => setIsCartOpen(false)}
-              className="p-1.5 text-slate-400 hover:text-slate-600 rounded-lg hover:bg-slate-200 transition-colors"
+              className="p-2 text-slate-400 hover:text-slate-600 rounded-xl hover:bg-slate-200 transition-colors min-w-[38px] min-h-[38px] flex items-center justify-center cursor-pointer"
               aria-label="Close Cart"
             >
               <X className="w-5 h-5" />

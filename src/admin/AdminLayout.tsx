@@ -107,13 +107,18 @@ export const AdminLayout: React.FC = () => {
             <span>{isExporting ? 'তৈরি হচ্ছে...' : 'Download Code (ZIP)'}</span>
           </button>
 
-          {/* View Live Store */}
+          {/* User Page Preview (View Live Store) */}
           <a
             href="#/"
-            className="flex items-center gap-1 px-3 py-1.5 bg-slate-800 hover:bg-slate-700 text-slate-200 text-xs font-semibold rounded-xl border border-slate-700 transition-colors"
+            onClick={(e) => {
+              e.preventDefault();
+              window.location.hash = '#/';
+            }}
+            className="flex items-center gap-1.5 px-3 py-1.5 bg-blue-600 hover:bg-blue-500 text-white text-xs font-bold rounded-xl shadow-sm transition-all cursor-pointer"
+            title="User Page Preview Link"
           >
-            <span>লাইভ শপ দেখুন</span>
-            <ExternalLink className="w-3 h-3" />
+            <ExternalLink className="w-3.5 h-3.5" />
+            <span>User Page Preview</span>
           </a>
 
           {/* Role badge */}

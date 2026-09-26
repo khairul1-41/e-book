@@ -34,26 +34,26 @@ export const EBookReaderModal: React.FC = () => {
   }[fontSize];
 
   return (
-    <div className="fixed inset-0 z-50 flex items-center justify-center p-3 sm:p-6 bg-slate-950/80 backdrop-blur-sm animate-in fade-in duration-200">
-      <div className="bg-[#FAF9F5] text-slate-900 rounded-2xl shadow-2xl max-w-4xl w-full h-[90vh] flex flex-col border border-stone-300 overflow-hidden">
+    <div className="fixed inset-0 z-50 flex items-center justify-center p-2 sm:p-6 bg-slate-950/80 backdrop-blur-sm animate-in fade-in duration-200">
+      <div className="bg-[#FAF9F5] text-slate-900 rounded-2xl sm:rounded-3xl shadow-2xl max-w-4xl w-full h-[94vh] flex flex-col border border-stone-300 overflow-hidden">
         
         {/* Reader Top Bar */}
-        <div className="bg-[#F3EFE6] px-4 sm:px-6 py-3 border-b border-stone-300 flex items-center justify-between gap-4">
-          <div className="flex items-center gap-3 min-w-0">
+        <div className="bg-[#F3EFE6] px-3.5 sm:px-6 py-2.5 sm:py-3 border-b border-stone-300 flex items-center justify-between gap-2 sm:gap-4">
+          <div className="flex items-center gap-2 sm:gap-3 min-w-0">
             <div className="w-8 h-8 rounded-lg bg-blue-900 text-white flex items-center justify-center shrink-0">
               <BookOpen className="w-4 h-4 text-amber-300" />
             </div>
             <div className="min-w-0">
-              <h3 className="font-bold text-sm sm:text-base text-slate-900 truncate">
+              <h3 className="font-extrabold text-xs sm:text-base text-slate-900 truncate">
                 {readingBook.title}
               </h3>
-              <p className="text-xs text-slate-500 truncate">
-                লেখক: {readingBook.author} • {readingBook.language}
+              <p className="text-[10px] sm:text-xs text-slate-500 truncate">
+                {readingBook.author} • {readingBook.language}
               </p>
             </div>
           </div>
 
-          <div className="flex items-center gap-2 shrink-0">
+          <div className="flex items-center gap-1.5 sm:gap-2 shrink-0">
             {/* Font size controls */}
             <div className="hidden sm:flex items-center gap-1 bg-stone-200/80 rounded-lg p-0.5 text-xs font-semibold text-stone-700">
               <button
@@ -82,7 +82,7 @@ export const EBookReaderModal: React.FC = () => {
             {/* Direct Download Button */}
             <button
               onClick={() => downloadBookFile(readingBook)}
-              className="px-3 py-1.5 bg-blue-900 hover:bg-blue-800 text-white text-xs font-semibold rounded-lg flex items-center gap-1.5 shadow-sm transition-colors cursor-pointer"
+              className="px-2.5 sm:px-3 py-1.5 bg-blue-900 hover:bg-blue-800 text-white text-xs font-semibold rounded-lg flex items-center gap-1.5 shadow-sm transition-colors cursor-pointer min-h-[36px]"
             >
               <Download className="w-3.5 h-3.5" />
               <span className="hidden sm:inline">ফাইল ডাউনলোড</span>
@@ -91,7 +91,8 @@ export const EBookReaderModal: React.FC = () => {
             {/* Close */}
             <button
               onClick={() => setReadingBook(null)}
-              className="p-1.5 text-slate-500 hover:text-slate-900 rounded-lg hover:bg-stone-200 transition-colors"
+              className="p-1.5 text-slate-500 hover:text-slate-900 rounded-lg hover:bg-stone-200 transition-colors min-w-[36px] min-h-[36px] flex items-center justify-center cursor-pointer"
+              aria-label="Close reader"
             >
               <X className="w-5 h-5" />
             </button>
@@ -99,7 +100,7 @@ export const EBookReaderModal: React.FC = () => {
         </div>
 
         {/* Reader Body / Scroll Area */}
-        <div className="flex-1 overflow-y-auto p-6 sm:p-10 max-w-2xl mx-auto w-full font-serif">
+        <div className="flex-1 overflow-y-auto p-4 sm:p-10 max-w-2xl mx-auto w-full font-serif">
           <div className="mb-6 pb-4 border-b border-stone-200 flex items-center justify-between">
             <span className="text-xs font-semibold uppercase tracking-wider text-stone-500 font-sans">
               নমুনা প্রিভিউ (Sample Preview) • অধ্যায় {currentChapterIndex + 1} / {chapters.length}
